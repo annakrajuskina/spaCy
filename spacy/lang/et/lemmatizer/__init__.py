@@ -1,7 +1,7 @@
 # coding: utf8
 from __future__ import unicode_literals
 
-from ...lemmatizer import Lemmatizer
+from ....lemmatizer import Lemmatizer
 
 
 class EstonianLemmatizer(Lemmatizer):
