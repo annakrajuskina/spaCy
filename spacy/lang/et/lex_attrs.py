@@ -1,7 +1,6 @@
 # coding: utf8
 from __future__ import unicode_literals
 
-# import the symbols for the attrs you want to overwrite
 from ...attrs import LIKE_NUM
 
 _num_words = ['null', 'üks', 'kaks', 'kolm', 'neli', 'viis', 'kuus', 'seitse', 'kaheksa', 'üheksa', 'kümme',
@@ -19,7 +18,7 @@ def like_num(text):
         num, denom = text.split('/')
         if num.isdigit() and denom.isdigit():
             return True
-    if text in _num_words:
+    if text.lower() in _num_words:
         return True
     return False
 
