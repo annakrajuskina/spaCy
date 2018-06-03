@@ -24,7 +24,7 @@ TRAIN_DATA = format_dataset()
 
 
 @plac.annotations(
-    model=("Model name. Defaults to blank 'et' model.", "option", "m", str),
+    model=("Model name. Defaults to blank 'en' model.", "option", "m", str),
     output_dir=("Optional output directory", "option", "o", Path),
     n_iter=("Number of training iterations", "option", "n", int))
 def main(model=None, output_dir=None, n_iter=100):
@@ -33,13 +33,8 @@ def main(model=None, output_dir=None, n_iter=100):
         nlp = spacy.load(model)  # load existing spaCy model
         print("Loaded model '%s'" % model)
     else:
-        nlp = spacy.blank('et')  # create blank Language class
-        print("Created blank 'et' model")
-
-    if output_dir is None:
-        output_dir = Path("/home/anna/data/")
-
-    print(output_dir)
+        nlp = spacy.blank('en')  # create blank Language class
+        print("Created blank 'en' model")
 
     # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy
