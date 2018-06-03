@@ -18,9 +18,14 @@ import spacy
 
 
 # training data
-from examples.training.format_dataset import format_dataset
-
-TRAIN_DATA = format_dataset()
+TRAIN_DATA = [
+    ('Who is Shaka Khan?', {
+        'entities': [(7, 17, 'PERSON')]
+    }),
+    ('I like London and Berlin.', {
+        'entities': [(7, 13, 'LOC'), (18, 24, 'LOC')]
+    })
+]
 
 
 @plac.annotations(
